@@ -10,4 +10,4 @@ pip install django --upgrade
 pip install django==3.0.4  (installing older version -- of ourse latest is 4 and above but the harry has 3 so..)
 
 
-
+after
