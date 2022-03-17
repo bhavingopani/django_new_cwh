@@ -1,0 +1,13 @@
+code with harry tutorial django
+
+installing django after installing python - check if all workng fine first like python v and pip
+
+install django
+
+pip install django
+pip install django --upgrade 
+
+pip install django==3.0.4  (installing older version -- of ourse latest is 4 and above but the harry has 3 so..)
+
+
+
