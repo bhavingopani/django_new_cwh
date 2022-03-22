@@ -16,6 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+
+#added to change the django text
+admin.site.site_header = "Amul Ice Cream Admin"
+admin.site.site_title = "Amul Ice Cream Admin Portal"
+admin.site.index_title = "Welcome to Amul Ice Cream"
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),  #this means whoever comes and do /admin   then it will go to Django Admin page
     path('', include('home.urls'))   #it means with this path.. or anything after / - he will be sent to home folder and urls file.   

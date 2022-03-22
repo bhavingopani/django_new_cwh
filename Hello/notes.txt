@@ -40,8 +40,43 @@ There is no urls.py in App which is home folder that we have created
     Templates   (Created folder)
 
 
+login to admin  
+    /admin     -- you will have some errors from django and that django error page will come But after below commands.. you will have different errors
+                    you will have errors like no such table when you try to login.
+
+to check if any changes in the database or schema or anything  -- we are just telling to make a file of what all changes are there.. It wont change anything. it will just check and save the record.
+    python manage.py makemigration   
+To migrate and django provides some default tables -- to migrate use below commang
+    python manage.py migrate
+
+Now use this link you will have different errors --as we have used the migrate command and so it will have all the default tables.
+    /admin     ##now error will be Please enter the correct username and password for a staff account. Note that both fields may be case-sensitive.
+
+Now we have to create user .. it can be superuser too.
+    python3 manage.py createsuperuser   #this info user and pass will automatically be gone to db.sqlite3
 
 
+
+---------------------
+model defines our database
+
+python3 manage.py makemigration     #this will just check changes and make a file .. it wont make any changes yet.
+    
+    #when you make migration with this -- it will show No changes detected. -- SO HAVE TO TAKE CARE OF TWO THINGS FIRST..
+        #1. Register your model first in admin of your App
+        #2. Register your App - Copy the Name from the Apps and go to settings And paste it in the Installed APP home.apps.HomeConfig
+
+Now when you Run makmigration   ---  it will generate migration file.. But wont make change to anything there. It will just check and generate the file if any changes
+
+Now you can migrate
+
+python3 manage.py migrate        ---- This will create table now. -- you can check that in Django Admin too. The Table is there.
+
+Adding Records
+NOT RECOMMENDED
+    #Now you can add Record directly from Admin of Django
+BEST WAY or IDEAL WAY
+    #Now write logic of Adding Record in the Views
 
 
 
