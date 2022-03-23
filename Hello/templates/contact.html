@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %} Contact Us {% endblock title %}
+
+{% block body %} 
+
+<div class = "container-fluid px-0 mb-3">
+    <img src="https://source.unsplash.com/random/1920x1080/?mountain" class="d-block w-100" alt="...">
+</div>
+<div class="container mb-3">    
+    <h1 class="text-center"> Contact Us </h1>
+    <form method="post" action="/contact">   
+        {% comment %} here this post request will go to the view -- as there is no db .. it wont do anythig the view will return the same output. wont trrogh an error. {% endcomment %}
+        {% comment %} IN usual cases the model will be there and that model will be imported to the view and then these values will be stored in the database. {% endcomment %}
+        {% comment %} CSRF token is needed for security porpose so that it can verify from the token that it is coming from our page only or this page only. CSRF token generates uniqe token every time the form gets submitted. {% endcomment %}
+        {% csrf_token %}  
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your name">
+        </div>
+
+        <div class="form-group">
+            <label for="email" >Email address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email">
+        </div>
+
+        <div class="form-group">
+            <label for="phone" >Phone Number</label>
+            <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter Your PhoneNumber">
+        </div>
+
+        <div class="form-group">
+            <label for="desc">Tell me about what you want to contact me for...</label>
+            <textarea class="form-control" id="desc" rows="3" name="desc"></textarea>
+        </div>
+        <div>
+            <button class="form-control btn btn-primary" type="submit">Submit </button>
+        </div>
+    </form>
+</div>      
+
+
+{% endblock body  %}
