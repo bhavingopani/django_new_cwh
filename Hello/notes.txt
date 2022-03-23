@@ -80,6 +80,19 @@ BEST WAY or IDEAL WAY
 
 
 
+start shell to run queries or filter data or Records
+    python3 manage.py shell
+    #this will start the shell and then you can use the queries to get the record.
+Can filter data in shell with the below commands
+    Contact.objects. anymethod you want to use.. after this..  So that you can get the data from the Contact object 
+        We can also get the last value or first value of the object or we can also get all the data with the help of different methods. etc.
+    this you can check in the django documents of queries.
+
+    
+
+
+
+
 
 
                                                             
