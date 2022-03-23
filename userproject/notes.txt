@@ -89,7 +89,16 @@ Can filter data in shell with the below commands
     this you can check in the django documents of queries.
 
     
+--------------------------------------------------------------------
 
+Starting new project again.
+
+start project with the command
+now makemigration 
+Now migratet
+
+Creat app with startapp command with name - for ex. home
+now register the app home  - copy and paste it from the apps.py of apps to settings installed app section with . . . 'home.apps.HomeConfig',
 
 
 
