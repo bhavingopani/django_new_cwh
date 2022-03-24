@@ -100,8 +100,55 @@ Now migratet
 Creat app with startapp command with name - for ex. home
 now register the app home  - copy and paste it from the apps.py of apps to settings installed app section with . . . 'home.apps.HomeConfig',
 
+Add domains if necessary in Allowed Hosts. - if not that is fine.
+
+Now create a static folder and templates folder
+
+Now search static DIRs in Django
+    - Set the static DIRs
+        - copy that from Django documents STATICFILES_DIRS = [
+                        os.path.join(BASE_DIR , "static"),  
+                            #'/var/www/static/',
+]       - paste it into settings file at last.
+
+Now Set the templates DIRs the same way as static
+    BASE_DIR / "templates"   --- the same way add this into DIRs of Template []
+    os.path.join(BASE_DIR , "templates")   #this one is correct
 
 
+Now start creating templates in templates folder.
+    like..
+        index.html
+        login.html   -- If user is not logged in .. We send him/her to the login page
+
+Now after creating basic templates -- add urls .. 
+    - Go to project's url file.. and include-- add path   like this.. path('', include('home.urls')),  this means include all the urls from the home app.
+    - Now go to home and make urls.py if not there.
+    - copy the same section from the urls.py of project to urls.py of app or home in this case.
+        - and make changes accordingly.  like add these for home and login logout  as well. delet all others
+                path('', views.index, name="home"),
+                path('login', views.login, name="login"),
+                path('logout', views.logout, name="logout"),
+now def request and render templates in views.py
+    render all templates as below AND CREATE VIEWS
+        def index(request):
+            return render(request, 'index.html' )
+
+        def login(request):
+            return render(request, 'login.html' )
+
+        def logout(request):
+            return render(request, 'index.html' )
+
+
+Now Do the authentication then use the redirect -- Or create an user
+ how to create user in Django
+
+ first create a superuser 
+ 
+Now go to django admin panel and Create user.
+
+Now use auth method from the Django Doc like Login , logout , Auh to check if the username and password are correct and ready to go.
 
 
                                                             

@@ -26,7 +26,7 @@ SECRET_KEY = '++4wyr%&&@4^q@1a8(n!#o+wi)jizo_h4)n*1c%sz=(ogkbs=h'
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['example1.com', 'example2.com']    #if you want to use any domain than you can use this.. and enter domain here.. so that you can access that domain and run the app.
+ALLOWED_HOSTS = ['127.0.0.1']    #if you want to use any domain than you can use this.. and enter domain here.. so that you can access that domain and run the app.
 
 
 # Application definition
@@ -56,7 +56,7 @@ ROOT_URLCONF = 'userproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [ os.path.join(BASE_DIR , "templates")  ],  #BASE_DIR / "templates"   added mannually
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -120,3 +120,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#added mannually - the blow static DIRs added mannually
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR , "static"),  
+    # '/var/www/static/',   #removing this line as we dont need it here.
+]
+
+
